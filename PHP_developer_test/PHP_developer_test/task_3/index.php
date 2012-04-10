@@ -1,9 +1,11 @@
 <?php
 
-/* Truncation with HTML. Write a function that truncates a string after the closest whole word, but also 
-safely retains HTML code. The string should be appended with ellipsis (6) at the end of the truncation. 
-For example, “This is my <span class=”bold”>bold</span> string!” with a truncation length of 12 should 
-return “This is my <span class=”bold”>bold</span>... */
+/**
+* A class used to operate on html
+*
+* @author Lance Caraccioli
+* @copyright 2012
+*/
 class LC_Tool_Html{
 	/**
 	* @var string $_html the raw html being processed
@@ -26,6 +28,9 @@ class LC_Tool_Html{
 	
 	/**
 	* Used to get the html that was previously set by a call to {@link setHtml()}
+	*
+	* @return string html that is currently being operated on
+	* @throws Exception you must first specify html to be operated on using {@link setHtml}
 	*/
 	public function getHtml(){
 		if (is_null($this->_html)){
@@ -36,6 +41,8 @@ class LC_Tool_Html{
 	
 	/**
 	* Used to get the tokenized version of the raw html currently being processed.
+	*
+	* @return array tokens of html split on html tags.
 	*/
 	public function getTokens(){
 		if (is_null($this->_tokens)){
@@ -45,7 +52,9 @@ class LC_Tool_Html{
 	}
 	
 	/**
-	* Protected method to do the actual tokenization of the html
+	* Method to do the actual tokenization of the html
+	*
+	* @return array tokens of html split on html tags.
 	*/
 	protected function _tokenize(){
 		return preg_split('/(<[^>]*>)/', $this->getHtml(), null, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
@@ -53,6 +62,8 @@ class LC_Tool_Html{
 	
 	/**
 	* Used to check if a particular string is an html opening tag
+	*
+	* @param $token string text that may or may not be a closing text
 	*/
 	public function isOpenTag($token){
 		return preg_match('/(<\s*[^\/][^>]*>)/', $token);
@@ -60,6 +71,8 @@ class LC_Tool_Html{
 	
 	/**
 	* Used to check if a particular string is an html closing tag
+	*
+	* @param $token string text that may or may not be a closing text
 	*/
 	public function isCloseTag($token){
 		return preg_match('/(<\s*\/[^>]*>)/', $token);
