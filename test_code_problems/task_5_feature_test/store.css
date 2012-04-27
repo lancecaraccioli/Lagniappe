@@ -1,1 +1,44 @@
-/* put your css here */
+body{
+	font-family:sans-serif;
+}
+
+#content-wrapper{
+	width:80%;
+	margin-left:10%;
+}
+
+#title{
+	display:block;
+	border-bottom:3px solid #000;
+}
+
+#left-column{
+	width:50%;
+	float:left;
+}
+
+#right-column{
+	width:50%;
+	float:left;
+}
+
+#left-column label{
+	display:block;
+	font-weight:bold;
+}
+
+#shopping-cart{
+	border:3px solid #CCC;
+	
+}
+
+#shopping-cart th{
+	background-color:#CCC;
+	font-size:.7em;
+}
+
+#product-image{
+	width:300px;
+	height:303px;
+	background-repeat:no-repeat;
+}
