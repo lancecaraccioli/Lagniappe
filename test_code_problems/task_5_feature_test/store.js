@@ -59,6 +59,11 @@ function init(){
 				$('shopping-cart').getElement('tbody').appendChild(cartItemEntry);
 				redrawCart();
 			});
+			$('checkout').addEvent('click',function(){
+				
+				alert('TODO: checkout');
+				return false;
+			});
 			$('category').fireEvent('change');
 			
 		}
@@ -81,9 +86,6 @@ function recalculateCartTotal(){
 	var total = 0;
 	Array.each($('shopping-cart').getElements('input'), function(item,index,object){
 		var productId = item.get('value');
-		console.debug(item);
-		console.debug(productId);
-		console.debug(total);
 		total += productData[productId-1].price;
 	});
 	$('shopping-cart').getElement('.cart-total').set('html','$'+total);
