@@ -42,6 +42,8 @@ body{
 #shopping-cart th{
 	background-color:#CCC;
 	font-size:.7em;
+	padding:5px;
+	padding-top:4px;
 }
 #shopping-cart tfoot tr td{
 	border-top:1px solid #CCC;
@@ -57,6 +59,7 @@ body{
 	font-size:.7em;
 	margin-top:4px;
 }
+
 #product-image{
 	position:relative;
 }
@@ -88,7 +91,7 @@ body{
 	bottom:0px;
 	height:50px;
 	width:300px;
-	opacity:.7;
+	opacity:.5;
 	background-color:black;
  
 }
@@ -101,4 +104,16 @@ body{
 	color:white;
 	font-size:1.2em;
 	font-weight:bold;
+}
+
+#category-label{
+	margin:10px 0;
+}
+
+#item-label{
+	margin:10px 0;
+}
+
+#shopping-cart-label{
+	margin:32px 0 5px 0;
 }
