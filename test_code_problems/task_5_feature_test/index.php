@@ -47,7 +47,10 @@
 			</div>			
 			<div id = "right-column">
 				<div id="product-image" >
+					<img src="" />
 					<div id="name-footer">
+					</div>
+					<div id = "product-name">
 					</div>
 				</div>
 				<div id="description">

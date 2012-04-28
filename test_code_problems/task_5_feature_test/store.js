@@ -27,8 +27,9 @@ function init(){
 				$('item').addEvent('change', function(){
 					var itemId = $('item').get('value');
 					var product = jsonResponse.storeData[itemId-1];
-					$('description').set('html',product.description + ' -  $' + product.price);
-					$('product-image').set('html', '<img src="'+product.image+'" />');
+					$('description').set('html',product.description);
+					$('product-image').getElement('img').set('src', product.image);
+					$('product-name').set('html', product.name+": $"+product.price);
 				});
 			});
 			$('add-to-cart').addEvent('click', function(){
@@ -60,7 +61,6 @@ function init(){
 				redrawCart();
 			});
 			$('checkout').addEvent('click',function(){
-				
 				alert('TODO: checkout');
 				return false;
 			});
