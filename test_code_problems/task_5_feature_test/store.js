@@ -1,5 +1,6 @@
 //Javascript file for question #5
 //MooTools documentation can be found at www.mootools.net
+var productData = {};
 function init(){
 	var myRequest = new Request({
 		url:'processAHR.php?action=load',
@@ -13,6 +14,7 @@ function init(){
 				$('category').addEvent('change', function(){
 					$('item').getElements('option').destroy();
 					var catid = $('category').get('value');
+					productData = jsonResponse.storeData;
 					Array.each(jsonResponse.storeData, function(item,index,object){
 						if (catid == item.catid){
 							var option = new Element('option', {value:item.item_id});
@@ -43,7 +45,7 @@ function init(){
 				removeButton.addEvent('click', function(){
 					//remove the parent tr
 					removeButton.getParent().getParent().destroy();
-					showHideCart();
+					redrawCart();
 				});
 				var hiddenProductInput = new Element('input');
 				hiddenProductInput.set('type', 'hidden');
@@ -55,7 +57,7 @@ function init(){
 				cartItemEntry.appendChild(itemPriceData);
 				cartItemEntry.appendChild(removeLinkColumn);
 				$('shopping-cart').getElement('tbody').appendChild(cartItemEntry);
-				showHideCart();
+				redrawCart();
 			});
 			$('category').fireEvent('change');
 			
@@ -63,8 +65,8 @@ function init(){
 	});
 	myRequest.send();
 };
-function showHideCart(){
-	if ($('shopping-cart').getElements('tr').length <= 1){
+function redrawCart(){
+	if ($('shopping-cart').getElement('tbody').getElements('tr').length <= 0){
 		$('shopping-cart').setStyle('display','none');
 		$('empty-shopping-cart').setStyle('display', 'block');
 	}
@@ -72,6 +74,19 @@ function showHideCart(){
 		$('shopping-cart').setStyle('display','table');
 		$('empty-shopping-cart').setStyle('display', 'none');		
 	}
+	recalculateCartTotal();
+}
+
+function recalculateCartTotal(){
+	var total = 0;
+	Array.each($('shopping-cart').getElements('input'), function(item,index,object){
+		var productId = item.get('value');
+		console.debug(item);
+		console.debug(productId);
+		console.debug(total);
+		total += productData[productId-1].price;
+	});
+	$('shopping-cart').getElement('.cart-total').set('html','$'+total);
 }
 window.addEvent('domready',init);
-window.addEvent('domready',showHideCart);
+window.addEvent('domready',redrawCart);

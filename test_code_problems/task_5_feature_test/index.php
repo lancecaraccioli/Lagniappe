@@ -34,6 +34,13 @@
 						<tbody>
 							
 						</tbody>
+						<tfoot>
+							<tr>
+								<td>Total</td>
+								<td class="cart-total"></td>
+								<td></td>
+							</tr>
+						</tfoot>
 					</table>
 					<button id="checkout">Checkout</button>
 				</form>
@@ -50,11 +57,5 @@
 		
 	</div>
 </div>
-
-
-<ul>
-	
-</ul>
-
 </body>
 </html>

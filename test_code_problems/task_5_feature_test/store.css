@@ -36,11 +36,15 @@ body{
 
 #shopping-cart td{
 	font-size:.7em;
+	padding:3px;
 }
 
 #shopping-cart th{
 	background-color:#CCC;
 	font-size:.7em;
+}
+#shopping-cart tfoot tr td{
+	border-top:1px solid #CCC;
 }
 
 #product-image{
