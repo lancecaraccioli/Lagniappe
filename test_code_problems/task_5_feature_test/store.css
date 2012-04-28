@@ -29,7 +29,13 @@ body{
 
 #shopping-cart{
 	border:3px solid #CCC;
-	
+	width:355px;
+	text-align:left;
+	font-size:1em;
+}
+
+#shopping-cart td{
+	font-size:.7em;
 }
 
 #shopping-cart th{
@@ -38,7 +44,47 @@ body{
 }
 
 #product-image{
+	border:1px solid #CCC;
 	width:300px;
-	height:303px;
-	background-repeat:no-repeat;
+	padding:0;
 }
+
+#description{
+	font-size:.7em;
+	margin-top:4px;
+}
+#product-image img{
+	margin:0;
+}
+
+#add-to-cart{
+	background-image:url(images/add_to_cart.png);
+	background-repeat:no-repeat;
+	display:block;
+	width:117px;
+	height:27px;
+	text-indent:-9999px;
+	margin-top:5px;
+	margin-left:-3px;
+	border:0;
+}
+
+#checkout{
+	background-image:url(images/checkout.png);
+	background-repeat:no-repeat;
+	width:83px;
+	height:21px;
+	border:0;
+	text-indent:-9999px;
+	margin-top:20px;
+}
+
+#name-footer{
+	position:absolute;
+	bottom:0px;
+	height:px;
+	width:px;
+	opacity:.7;
+ 
+}
+
