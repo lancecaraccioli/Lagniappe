@@ -18,8 +18,17 @@ switch($action){
 	case 'load':
 		$jsonData = array(
 			'categories'=>$categories,
-			'storeData'=>$storeData,
 		);
+		break;
+	case 'loadProducts':
+		$categoryId = $_REQUEST['catid'];
+		$jsonData['storeData']=array();
+		foreach ($storeData as $product){
+			if ($product['catid'] == $categoryId){
+				$jsonData['storeData'][] = $product;
+			}
+		}
+		
 		break;
 	case 'checkout':
 		break;
