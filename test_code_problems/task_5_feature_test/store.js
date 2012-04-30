@@ -123,7 +123,7 @@ function recalculateCartTotal(){
 	var total = 0;
 	Array.each($('shopping-cart').getElements('input'), function(item,index,object){
 		var productId = item.get('value');
-		total += productData[productId-1].price;
+		total += products[productId].price;
 	});
 	$('shopping-cart').getElement('.cart-total').set('html','$'+total);
 }
