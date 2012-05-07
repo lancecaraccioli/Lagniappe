@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="php" deleted="false" description="generate setters and getters " enabled="true" name="setget">/**
+* @var ${type} ${dollar}_${lowerName}
+*/
+protected ${dollar}_${lowerName};
+${cursor}
+/**
+* Enter_Description
+*
+* @param ${type} ${lowerName}
+* @return ${dollar}this fluent interface
+*/
+public function set${UpperName}(${dollar}${lowerName}){
+	${dollar}this-&gt;_${lowerName} = ${dollar}${lowerName};
+	return ${dollar}this;
+}
+
+/**
+* Enter_Description
+* 
+* @return ${type} Description
+* @throws Exception if unset
+*/
+public function get${UpperName}(${dollar}${lowerName}){
+	if (!${dollar}this-&gt;_${lowerName}){
+		throw new Exception("${UpperName} is not set.");
+	}
+	return ${dollar}this-&gt;_${lowerName};
+}
+</template></templates>
