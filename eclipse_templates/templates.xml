@@ -20,7 +20,7 @@ public function set${UpperName}(${dollar}${lowerName}){
 * @return ${type} Description
 * @throws Exception if unset
 */
-public function get${UpperName}(${dollar}${lowerName}){
+public function get${UpperName}(){
 	if (!${dollar}this-&gt;_${lowerName}){
 		throw new Exception("${UpperName} is not set.");
 	}
