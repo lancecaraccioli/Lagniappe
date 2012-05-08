@@ -7,7 +7,7 @@ ${cursor}
 * Enter_Description
 *
 * @param ${type} ${lowerName}
-* @return ${dollar}this fluent interface
+* @return ${class_container} ${dollar}this fluent interface
 */
 public function set${UpperName}(${dollar}${lowerName}){
 	${dollar}this-&gt;_${lowerName} = ${dollar}${lowerName};
